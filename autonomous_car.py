@@ -151,11 +151,14 @@ class AutonomousCar(object):
 
 
 def main():
+    try:
+        mode = raw_input('Enter mode(normal, sport or safe): ').lower()
+        if mode not in ('normal', 'sport', 'safe'):
+            raise Exception("Invalid mode. Enter a valid driving mode!!!")
+    except Exception as error:
+        print('Caught this error: ' + repr(error))
+        exit(0)
 
-    mode = raw_input('Enter mode(normal, sport or safe): ').lower()
-    if mode not in ('normal', 'sport', 'safe'):
-        print ("Enter a valid driving mode!!!")
-        raise UnknownModeError()
 
     car = AutonomousCar(mode)
     while True:
