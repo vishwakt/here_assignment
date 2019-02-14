@@ -1,8 +1,6 @@
 # Here Assignment
-Details 
 
-
-##Running the code
+**Running the code**
 
 The code can be executed on the command line using the command below:
 
@@ -12,10 +10,10 @@ python autonomous_car.py
 ```
 You will be prompted to enter the drive mode.
 
-either by the below command or by using the executable file:
+The code can also be executed by using the executable file in the dist/autonomous_car directory:
 > autonomous_car
 
-##Tests
+**Tests**
 
 The tests can be executed from the below mentioned file
 
