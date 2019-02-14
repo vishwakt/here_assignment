@@ -17,7 +17,7 @@ DefaultEventDataMap = {
 
 
 class UnknownModeError(Exception):
-    """Raised when mode is Unknown."""
+    """Raised when driving mode is Unknown."""
     pass
 
 
@@ -146,16 +146,24 @@ class AutonomousCar(object):
             self._traffic_clear()
         elif event_id == 1:
             self._traffic()
+        else:
+            print "Please enter valid input"
 
 
 def main():
-    mode = raw_input('Enter mode(NORMAL, SPORT or SAFE): ').lower()
+
+    mode = raw_input('Enter mode(normal, sport or safe): ').lower()
     if mode not in ('normal', 'sport', 'safe'):
+        print ("Enter a valid driving mode!!!")
         raise UnknownModeError()
+
     car = AutonomousCar(mode)
     while True:
-        event_id = int(raw_input('Enter Event: '))
-        car.observe(event_id)
+        try:
+            event_id = int(raw_input('Enter Event: '))
+            car.observe(event_id)
+        except ValueError:
+            print ("Please enter a valid event ID")
 
 
 if __name__ == '__main__':
