@@ -22,3 +22,6 @@ The tests can be executed from the below mentioned file
 python autonomous_car_tests.py
 ```
 
+**Note**
+The code is production ready. Please comment out line number 171 in the file 'python autonomous_car.py' 
+if you prefer no debug statements.
